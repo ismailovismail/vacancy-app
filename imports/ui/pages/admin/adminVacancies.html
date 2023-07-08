@@ -1,0 +1,26 @@
+<template name="adminVacancies">
+    <h4 class="text-center">Vakansiyalar</h4>
+    <div class="add-vacancy d-flex justify-content-end">
+        <a href="/admin/add-vacancy" class="btn btn-outline-dark">Əlavə et +</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Adı</th>
+                <th scope="col">Redaktə et</th>
+                <th scope="col">Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each getVacancies }}
+            <tr>
+                <th scope="row">{{index}}</th>
+                <td>{{name}}</td>
+                <td><a href="/admin/vacancies/{{_id}}" class="btn btn-primary">Redaktə et</a></td>
+                <td><button class="btn btn-danger removeVacancy">Sil</button></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</template>

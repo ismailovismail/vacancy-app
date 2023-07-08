@@ -1,0 +1,29 @@
+<template name="adminAppVacancyDetail">
+    <section class="admin-app-vacancy-detail-page">
+        <h4 class="text-center">Müraciət edən şəxsin detalları</h4>
+        <div class="container-fluid">
+            <div class="details mx-4 d-flex flex-column gap-2 my-4">
+                {{#with getDetails }}
+                <h4>Vakansiyanın adı: {{name}} </h4>
+                {{#with getUser this}}
+                <h4>Müraciət edən şəxsin adı və soyadı: {{profile.firstname}} {{profile.lastname}} </h4>
+                <h4>Müraciət edən şəxsin e-poçt ünvanı: {{emails.[0].address}} </h4>
+                {{/with}}
+                <div class="user-file d-flex align-items-center gap-2 ">
+                    <h4>Müraciət edən şəxsin CV faylı:</h4>
+                    <a href="{{getFile this}}">{{#with getUser this }} {{profile.firstname}}'s cv file {{/with}} </a>
+                </div>
+                <div class="status-part d-flex gap-4">
+                    <h6>Müraciətin statusu: {{status}}</h6>
+                    <select class="statusSelect rounded" >
+                        {{#each getStatus }}
+                        <option value="{{this}}">{{this}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <button class="btn btn-primary updateBtn" >Yadda saxla</button>
+                {{/with}}
+            </div>
+        </div>
+    </section>
+</template>

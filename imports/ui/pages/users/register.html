@@ -1,0 +1,37 @@
+<template name="register">
+    <section style="min-height: 100vh;" class="register-page d-flex align-items-center">
+        <div class="container-fluid">
+            <div class="register-form row d-flex justify-content-center">
+                <form class="col-xl-4 bg-white p-2 rounded d-flex flex-column gap-2" id="registerForm">
+                    <h1 class="text-center fs-1">Register</h1>
+                    <div class="form-group">
+                        <label for="registerFirstName">First Name</label>
+                        <input type="text" class="form-control" placeholder="First Name" name="firstName"
+                            id="registerFirstName">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerLastName">Last Name</label>
+                        <input type="text" class="form-control" placeholder="Last Name" name="lastName"
+                            id="registerLastName">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerUsername">Username</label>
+                        <input type="text" placeholder="Username" name="userName" class="form-control"
+                            id="registerUsername">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email</label>
+                        <input type="email" class="form-control" name="email" id="registerEmail" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <input type="password" placeholder="Password" class="form-control" name="password"
+                            id="registerPassword">
+                    </div>
+                    <button class="btn btn-primary">Register</button>
+                    <span>Do you have an account? <a href="/login">Login now</a> </span>
+                </form>
+            </div>
+        </div>
+    </section>
+</template>

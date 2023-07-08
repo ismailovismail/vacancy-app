@@ -1,0 +1,22 @@
+<template  name="login">
+    <section style="min-height: 100vh;" class="login-page d-flex align-items-center">
+           <div class="container-fluid">
+               <div class="login-form row d-flex justify-content-center">
+                   <form class="col-xl-4 bg-white p-2 rounded d-flex flex-column gap-2" id="loginForm">
+                    <h1 class="text-center fs-1" >Login</h1>
+                    <div class="form-group">
+                        <label for="loginUsername">Username</label>
+                        <input type="text" placeholder="Username" class="form-control" id="loginUsername">
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" placeholder="Password" class="form-control" name="password" id="loginPassword" >
+                    </div>
+                    <a class="text-dark" href="/forget-password">Forget Password?</a>
+                     <button class="btn btn-primary" >Login</button>
+                     <span>Don't have an account? <a href="/register">Register now</a> </span>
+                   </form>
+               </div>
+           </div>
+    </section>
+</template>

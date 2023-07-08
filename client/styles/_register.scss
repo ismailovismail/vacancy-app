@@ -1,0 +1,14 @@
+.register-page{
+    background-image: url('/images/blue.jpg');
+    background-position: center;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    .register-form{
+        form{
+            box-shadow: 10px 11px 31px -7px rgba(0,0,0,0.75);
+            -webkit-box-shadow: 10px 11px 31px -7px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 11px 31px -7px rgba(0,0,0,0.75);
+        }
+    }
+}

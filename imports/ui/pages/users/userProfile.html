@@ -1,0 +1,40 @@
+<template name="userProfile">
+    <section class="user-profile-page">
+        <div class="container-fluid">
+            <div class="user-details d-flex justify-content-center mx-4 row my-4">
+                <div class="profile-img d-flex justify-content-center">
+                    <img width="200px" src="/images/avatar.webp" alt="">
+                </div>
+                 <form class="col-xl-4 d-flex flex-column gap-2"  id="userEdit">
+                    <div class="form-group">
+                        <label for="firstName">Ad</label>
+                        <input type="text" id="firstName" pattern="[A-Za-z\s]+" placeholder="First Name" value="{{currentUser.profile.firstname}}" class="form-control" >
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Soyad</label>
+                        <input type="text" class="form-control" pattern="[A-Za-z\s]+" placeholder="Last Name" id="lastName" value="{{currentUser.profile.lastname}}" >
+                    </div>
+                    <div class="form-group">
+                        <label for="userName">İstifadəçi adı</label>
+                         <input type="text" placeholder="Username" pattern="[A-Za-z\s]+" class="form-control" id="userName" value="{{currentUser.username}}" >
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" placeholder="Email" pattern="[^\s@]+@[^\s@]+\.[^\s@]+" id="email" class="form-control" value="{{currentUser.emails.[0].address}}" >
+                    </div>
+                    <div class="form-group">
+                        <label for="cvFile">CV Yüklə</label>
+                        <input type="file" class="form-control" placeholder="CV" id="cvFile" >
+                    </div>
+                    <div class="cv-file">
+                        {{#if getCvFile currentUser }}
+                        <a href="{{getCvFile currentUser}}">{{currentUser.profile.firstname}}'s cv file</a>
+                        {{/if}}
+                    </div>
+                    <button class="btn btn-primary">Yadda saxla</button>
+                    <a href="/change-password" class="btn btn-danger">Şifrəni dəyiş</a>
+                 </form>
+            </div>
+        </div>
+    </section>
+</template>

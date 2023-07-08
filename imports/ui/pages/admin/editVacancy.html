@@ -1,0 +1,60 @@
+<template name="editVacancy">
+    <h4 class="text-center">Vakansiyanı Redaktə et</h4>
+    <div class="edit-vacancy-form row d-flex justify-content-center">
+        {{#with getVacancy}}
+        <form class="d-flex  flex-column col-xl-7 gap-2" id="editVacancy">
+            <div class="form-group">
+                <label for="name">Adı</label>
+                <input type="text" placeholder="Adı" id="name" class="form-control name" value="{{name}}">
+                <div class="invalid-feedback feedback-name"></div>
+            </div>
+            <div class="form-group">
+                <label for="">Şirkət</label>
+                <input type="text" class="form-control companyname" id="companyname" placeholder="Şirkət"
+                    value="{{companyname}}">
+                <div class="invalid-feedback feedback-companyname"></div>
+            </div>
+            <div class="form-group">
+                <label for="address">Adres</label>
+                <input type="text" placeholder="Adres" id="address" class="form-control address" value="{{address}}">
+                <div class="invalid-feedback feedback-address"></div>
+            </div>
+            <label for="">Tələblər</label>
+            <div class="form-group d-flex flex-column gap-2">
+                <div class="demand-group d-flex gap-2 align-items-center">
+                    <input type="text" placeholder="Tələblər" id="demands" class="form-control">
+                    <button class="btn btn-primary demandBtn ">+</button>
+                    <div class="invalid-feedback feedback-demands"></div>
+                </div>
+                <ul class="demands d-flex flex-column gap-3">
+                    {{#each getDemands}}
+                    <li class="d-flex gap-4">{{this}} {{#if getDemand this }} <button
+                            class="btn btn-danger deleteBtn">Sil</button> {{/if}} </li>
+                    {{/each}}
+                    {{#if getDemandsLength }}
+                    <p>Mövcud tələb yoxdur</p>
+                    {{/if}}
+                </ul>
+            </div>
+            <div class="form-group">
+                <label for="">Email</label>
+                <input type="text" class="form-control email" id="email" placeholder="Email" value="{{email}}">
+                <div class="invalid-feedback feedback-email"></div>
+            </div>
+            <div class="form-group">
+                <label for="">Telefon nömrəsi</label>
+                <input type="phone" class="form-control phone" placeholder="Telefon nömrəsi" id="phone"
+                    value="{{phone}}">
+                <div class="invalid-feedback feedback-phone"></div>
+            </div>
+            <div class="form-group">
+                <label for="">Son tarix: {{getDate}}</label>
+                <input type="text" class="form-control lastdate" id="lastdate" placeholder="Son tarix"
+                    value="{{getDate}}">
+                <div class="invalid-feedback feedback-lastdate"></div>
+            </div>
+            <button type="submit" class="btn btn-primary">Redaktə et</button>
+        </form>
+        {{/with}}
+    </div>
+</template>

@@ -1,0 +1,29 @@
+<template name="adminAppliedVacancies">
+    {{#if getAppliedVacancies }}
+    <h4 class="text-center">Müraciətlər</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Müraciət edən</th>
+                <th scope="col">Vakansiyanın adı</th>
+                <th scope="col">Detallar</th>
+                <th scope="col">Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+           {{#each getAppliedVacancies }}
+           <tr>
+            <th scope="row">{{index}}</th>
+            <td>{{getUser this }}</td>
+            <td>{{name}}</td>
+            <td><a href="/admin/applied-vacancies/{{_id}}" class="btn btn-primary">Detallar</a></td>
+            <td><button class="btn btn-danger removeVacancy">Sil</button></td>
+           </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+    <h4 class="text-center">Müraciət edilmiş vakansiya yoxdur</h4>
+    {{/if}}
+</template>

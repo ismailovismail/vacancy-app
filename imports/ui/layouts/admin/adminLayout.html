@@ -1,0 +1,25 @@
+<template name="adminLayout">
+ <section style="min-height: 80vh;" class="admin">
+   <div class="container-fluid">
+    <div class="row">
+      <div style="min-width: fit-content; min-height: 100vh;" class="side-bar-admin p-0 bg-dark col-12 col-xl-2 d-flex flex-column gap-3 ">
+        <div class="admin-img d-flex gap-2 mt-5 justify-content-center">
+          <h1 class="text-white fs-1 text-center">JOB</h1>
+          <img width="40px" class="rounded" src="/images/avatar.webp" alt="">
+        </div>
+          <div style="min-height: 50vh;" class="page-links d-flex flex-column gap-2 justify-content-center">
+            <li class="list-unstyled p-2 text-center border-bottom border-top"><a class="text-white fs-6 text-decoration-none" href="/admin/users">İstifadəçilər</a></li>
+            <li class="list-unstyled p-2 text-center border-bottom"><a class="text-white fs-6 text-decoration-none" href="/admin/vacancies">Vakansiyalar</a></li>
+            <li class="list-unstyled p-2 text-center border-bottom"><a class="text-white fs-6 text-decoration-none" href="/admin/applied-vacancies">Müraciətlər</a></li>
+            <div class="switch-home d-flex justify-content-center">
+              <a href="/" class="btn btn-success"> <i class="fa-solid fa-house" ></i> </a>
+            </div>
+          </div>
+        </div>
+        <div style="min-height: auto;" class="admin-pages p-2 col-12 col-xl-10 ">
+            {{> Template.dynamic template=main}}
+        </div>
+     </div>
+   </div>
+ </section>
+</template>

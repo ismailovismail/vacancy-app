@@ -1,0 +1,23 @@
+<template name="appliedVacancyDetail">
+    <section style="min-height: 100vh;" class="applied-vacancies-detail-page bg-light ">
+        <div class="container-fluid d-flex align-items-center gap-2 p-2">
+          <div class="mx-4 my-4">
+              {{#with getAppliedVacancy}}
+               <h1>{{name}} - {{companyname}} </h1>
+               <h4>Ünvan: {{address}}</h4>
+               <div class="demands d-flex gap-2">
+                <h3>Tələblər:</h3>
+                {{#each demands }}
+                <li class="fs-4 list-unstyled">- {{this}}</li>
+                {{/each}} 
+              </div>
+              <h4>E-poçt: {{email}} </h4>
+              <h4>Telefon nömrəsi: +{{phone}}</h4>
+              <h4>Bitmə tarixi: {{getDate}} </h4>
+              <h4>Status: {{status}} </h4>
+              <button class="btn btn-danger removeBtn" >Ləğv et</button>
+              {{/with}}
+          </div>
+        </div>
+    </section>
+</template>

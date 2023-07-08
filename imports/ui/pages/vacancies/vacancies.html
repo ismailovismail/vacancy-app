@@ -1,0 +1,35 @@
+<template name="home">
+  <h4 class="text-center" >Vakansiyalar</h4>
+  <div class="search-system px-5 py-2">
+    <input type="text" placeholder="Axtar" id="searchInp" class="form-control" >
+    <div class="sort-part d-flex my-2 gap-2">
+      <h5>Bitmə tarixinə görə sırala:</h5>
+      <select class="rounded" name="" id="selectDate">
+        <option value="1">Ən tezdən ən gecə</option>
+        <option value="-1">Ən gecdəm ən tezə</option>
+      </select>
+    </div>
+  </div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Adı</th>
+            <th scope="col">Şirkət</th>
+            <th scope="col">Ünvan</th>
+            <th scope="col">Detallar</th>
+          </tr>
+        </thead>
+        <tbody>
+         {{#each getVacancies }}
+         <tr>
+            <th scope="row">{{index}}</th>
+            <td>{{name}}</td>
+            <td>{{companyname}}</td>
+            <td>{{address}}</td>
+            <td><a href="/vacancies/{{_id}}" class="btn btn-primary">Detallar</a></td>
+          </tr>
+         {{/each}}
+        </tbody>
+      </table>
+</template>

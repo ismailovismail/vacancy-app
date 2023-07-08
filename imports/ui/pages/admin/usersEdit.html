@@ -1,0 +1,25 @@
+<template name="usersEdit">
+    <section  class="users-edit">
+        <div class="container-fluid">
+            <h4 class="text-center">İstifadəçini Redaktə et</h4>
+            <div class="user-edit-form row d-flex justify-content-center">
+                <form class="d-flex  flex-column col-xl-7 gap-2" id="userEdit">
+                        <label for="">First Name</label>
+                        <input type="text" placeholder="First Name" name="firstName" class="form-control firstName" value="{{getUser.profile.firstname}}" >
+                        <label for="">Last Name</label>
+                        <input type="text" class="form-control lastName" name="lastName"  placeholder="Last Name" value="{{getUser.profile.lastname}}" >
+                        <label for="">Username</label>
+                        <input type="text" placeholder="Username" name="userName" class="form-control userName" value="{{getUser.username}}" >
+                        <label for="">Email</label>
+                        <input type="text" class="form-control email" name="email" placeholder="Email" value="{{getUser.emails.[0].address}}" >
+                        <label for="">Role: {{getUser.profile.role}} </label>
+                         <select id="roleSelect" class="form-control">
+                            <option value="CEO">CEO</option>
+                            <option value="User">User</option>
+                         </select>
+                        <button type="submit" class="btn btn-primary" >Redaktə et</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</template>

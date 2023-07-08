@@ -1,0 +1,23 @@
+<template name="users">
+<h4 class="text-center">İstifadəçilər</h4>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Email</th>
+        <th scope="col">Redaktə et</th>
+        <th scope="col">Sil</th>
+      </tr>
+    </thead>
+    <tbody>
+     {{#each getUsers}}
+     <tr>
+        <th scope="row">{{index}}</th>
+        <td>{{emails.[0].address}}</td>
+        <td><a href="/admin/users/{{_id}}" class="btn btn-primary" >Redaktə et</a></td>
+        <td><button class="btn btn-danger removeUser" >Sil</button></td>
+      </tr>
+     {{/each}}
+    </tbody>
+  </table>
+</template>
